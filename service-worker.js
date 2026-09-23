@@ -1,4 +1,4 @@
-const CACHE_NAME = "secretaria-comun-v1";
+const CACHE_NAME = "secretaria-comun-v2";
 
 const FILES_TO_CACHE = [
     "./",
@@ -8,68 +8,37 @@ const FILES_TO_CACHE = [
     "./icon-512.png"
 ];
 
-// INSTALACIÓN
-self.addEventListener("install", function(event) {
-
+self.addEventListener("install", event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(function(cache) {
-                return cache.addAll(FILES_TO_CACHE);
-            })
+            .then(cache => cache.addAll(FILES_TO_CACHE))
     );
 
     self.skipWaiting();
 });
 
-
-// ACTIVACIÓN
-self.addEventListener("activate", function(event) {
-
+self.addEventListener("activate", event => {
     event.waitUntil(
-
-        caches.keys().then(function(cacheNames) {
-
+        caches.keys().then(cacheNames => {
             return Promise.all(
-
                 cacheNames
-                    .filter(function(cacheName) {
-                        return cacheName !== CACHE_NAME;
-                    })
-                    .map(function(cacheName) {
-                        return caches.delete(cacheName);
-                    })
-
+                    .filter(cacheName => cacheName !== CACHE_NAME)
+                    .map(cacheName => caches.delete(cacheName))
             );
-
         })
-
     );
 
     self.clients.claim();
 });
 
-
-// FUNCIONAMIENTO DE LA CACHÉ
-self.addEventListener("fetch", function(event) {
-
+self.addEventListener("fetch", event => {
     event.respondWith(
-
         caches.match(event.request)
-            .then(function(cachedResponse) {
-
-                if (cachedResponse) {
-                    return cachedResponse;
-                }
-
-                return fetch(event.request);
-
+            .then(cachedResponse => {
+                return cachedResponse || fetch(event.request);
             })
-            .catch(function() {
-
+            .catch(() => {
                 return caches.match("./index.html");
-
             })
-
     );
-
 });
