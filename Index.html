@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secretaría Común – CGR Quindío</title>
+
+<meta name="theme-color" content="#12345b">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+    background:
+        linear-gradient(135deg, #eef4fa 0%, #ffffff 50%, #e8f0f8 100%);
+    color:#17365d;
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.header{
+    background:linear-gradient(135deg,#0d2d4f,#174f7d);
+    color:white;
+    padding:28px 20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.header-content{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    width:78px;
+    height:78px;
+    border:2px solid #d8b45a;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    background:rgba(255,255,255,.08);
+    flex-shrink:0;
+}
+
+.header-text h1{
+    font-size:25px;
+    letter-spacing:.5px;
+    margin-bottom:6px;
+}
+
+.header-text p{
+    font-size:15px;
+    opacity:.9;
+}
+
+.gold-line{
+    width:100%;
+    max-width:1150px;
+    height:3px;
+    background:#d8b45a;
+    margin:20px auto 0;
+    border-radius:5px;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:35px auto 50px;
+}
+
+.welcome{
+    text-align:center;
+    margin-bottom:32px;
+}
+
+.welcome h2{
+    font-size:30px;
+    color:#12345b;
+    margin-bottom:8px;
+}
+
+.welcome p{
+    color:#60758a;
+    font-size:16px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.apps-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.app-card{
+    background:white;
+    border-radius:18px;
+    padding:25px 22px;
+    min-height:190px;
+    border:1px solid #dce5ee;
+    box-shadow:0 7px 20px rgba(20,55,85,.09);
+    transition:.25s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.app-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 13px 28px rgba(20,55,85,.16);
+    border-color:#c7a64d;
+}
+
+.icon{
+    width:58px;
+    height:58px;
+    border-radius:15px;
+    background:#edf4fa;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:29px;
+    margin-bottom:15px;
+}
+
+.app-card h3{
+    color:#163f68;
+    font-size:19px;
+    margin-bottom:7px;
+}
+
+.app-card p{
+    color:#718294;
+    font-size:14px;
+    line-height:1.45;
+    margin-bottom:18px;
+}
+
+.btn{
+    width:100%;
+    border:none;
+    border-radius:10px;
+    padding:12px 15px;
+    background:#174f7d;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+    text-decoration:none;
+    text-align:center;
+    display:block;
+}
+
+.btn:hover{
+    background:#0d3658;
+}
+
+.btn.disabled{
+    background:#b9c4ce;
+    cursor:not-allowed;
+}
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.info{
+    margin-top:35px;
+    background:white;
+    border-radius:18px;
+    padding:24px;
+    border-left:5px solid #d8b45a;
+    box-shadow:0 6px 18px rgba(20,55,85,.08);
+}
+
+.info h3{
+    margin-bottom:8px;
+    color:#163f68;
+}
+
+.info p{
+    color:#68798a;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* =========================
+   PIE
+========================= */
+
+.footer{
+    text-align:center;
+    padding:25px 15px;
+    color:#718294;
+    font-size:13px;
+}
+
+.footer strong{
+    color:#174f7d;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    .apps-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .header{
+        padding:22px 15px;
+    }
+
+    .header-content{
+        align-items:flex-start;
+    }
+
+    .logo{
+        width:60px;
+        height:60px;
+        font-size:25px;
+        border-radius:14px;
+    }
+
+    .header-text h1{
+        font-size:19px;
+    }
+
+    .header-text p{
+        font-size:13px;
+    }
+
+    .container{
+        width:94%;
+        margin-top:25px;
+    }
+
+    .welcome h2{
+        font-size:25px;
+    }
+
+    .apps-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .app-card{
+        min-height:auto;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+```
+<div class="header-content">
+
+    <div class="logo">
+        ⚖️
+    </div>
+
+    <div class="header-text">
+
+        <h1>
+            CONTRALORÍA GENERAL DE LA REPÚBLICA
+        </h1>
+
+        <p>
+            Gerencia Departamental Colegiada del Quindío
+            · Secretaría Común
+        </p>
+
+    </div>
+
+</div>
+
+<div class="gold-line"></div>
+```
+
+</header>
+
+<main class="container">
+
+```
+<section class="welcome">
+
+    <h2>
+        Secretaría Común
+    </h2>
+
+    <p>
+        Plataforma de acceso a las herramientas de la Secretaría Común
+    </p>
+
+</section>
+
+
+<section class="apps-grid">
+
+
+    <!-- NÚMERO PARA AUTO -->
+
+    <div class="app-card">
+
+        <div>
+
+            <div class="icon">
+                🔢
+            </div>
+
+            <h3>
+                Número para Auto
+            </h3>
+
+            <p>
+                Herramienta para consulta y gestión del número correspondiente a los Autos.
+            </p>
+
+        </div>
+
+        <a
+            href="#"
+            class="btn disabled"
+        >
+            Próximamente
+        </a>
+
+    </div>
+
+
+    <!-- DEVOLUCIONES -->
+
+    <div class="app-card">
+
+        <div>
+
+            <div class="icon">
+                📄
+            </div>
+
+            <h3>
+                Generador de Devoluciones
+            </h3>
+
+            <p>
+                Elaboración de documentos de devolución de manera rápida y organizada.
+            </p>
+
+        </div>
+
+        <a
+            href="#"
+            class="btn disabled"
+        >
+            Próximamente
+        </a>
+
+    </div>
+
+
+    <!-- CONSTANCIAS -->
+
+    <div class="app-card">
+
+        <div>
+
+            <div class="icon">
+                📋
+            </div>
+
+            <h3>
+                Constancia Secretarial
+            </h3>
+
+            <p>
+                Generación de constancias secretariales.
+            </p>
+
+        </div>
+
+        <a
+            href="#"
+            class="btn disabled"
+        >
+            Próximamente
+        </a>
+
+    </div>
+
+
+    <!-- CITACIONES -->
+
+    <div class="app-card">
+
+        <div>
+
+            <div class="icon">
+                📬
+            </div>
+
+            <h3>
+                Citaciones
+            </h3>
+
+            <p>
+                Herramienta para la elaboración y gestión de citaciones.
+            </p>
+
+        </div>
+
+        <a
+            href="#"
+            class="btn disabled"
+        >
+            Próximamente
+        </a>
+
+    </div>
+
+
+    <!-- NOTIFICACIONES -->
+
+    <div class="app-card">
+
+        <div>
+
+            <div class="icon">
+                🔔
+            </div>
+
+            <h3>
+                Notificaciones
+            </h3>
+
+            <p>
+                Acceso a las herramientas relacionadas con las notificaciones.
+            </p>
+
+        </div>
+
+        <a
+            href="#"
+            class="btn disabled"
+        >
+            Próximamente
+        </a>
+
+    </div>
+
+
+    <!-- ESTADOS -->
+
+    <div class="app-card">
+
+        <div>
+
+            <div class="icon">
+                📑
+            </div>
+
+            <h3>
+                Estados
+            </h3>
+
+            <p>
+                Consulta y gestión de Estados de la Secretaría Común.
+            </p>
+
+        </div>
+
+        <a
+            href="https://script.google.com/macros/s/AKfycbwrrQ8bUHDJuVWQsRCgN4tTG7RrAY0Vx4yGN5Md7MrW02o6yelzqbRhsRQsbY2A5Mda/exec"
+            class="btn"
+            target="_blank"
+        >
+            Abrir aplicación
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="info">
+
+    <h3>
+        Secretaría Común · Quindío
+    </h3>
+
+    <p>
+        Este portal centraliza las herramientas digitales utilizadas
+        para apoyar las actividades de la Secretaría Común de la
+        Gerencia Departamental Colegiada del Quindío.
+    </p>
+
+</section>
+```
+
+</main>
+
+<footer class="footer">
+
+```
+Secretaría Común · CGR Quindío
+
+<br><br>
+
+<strong>
+    Plataforma institucional
+</strong>
+```
+
+</footer>
+
+</body>
+</html>
