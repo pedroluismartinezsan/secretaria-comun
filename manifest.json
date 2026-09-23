@@ -2,25 +2,25 @@
   "name": "Secretaría Común Digital",
   "short_name": "Secretaría Común",
   "description": "Plataforma digital de herramientas de la Secretaría Común - Gerencia Departamental Colegiada del Quindío",
-  "start_url": "/secretaria-comun/",
-  "scope": "/secretaria-comun/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#06182d",
   "theme_color": "#06182d",
   "lang": "es-CO",
   "icons": [
-  {
-    "src": "./icon-192.png",
-    "sizes": "192x192",
-    "type": "image/png",
-     "purpose": "any"
-  },
-  {
-    "src": "./icon-512.png",
-    "sizes": "512x512",
-    "type": "image/png",
-     "purpose": "any"
-  }
-]
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }
