@@ -2,294 +2,803 @@
 
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Secretaría Común – CGR Quindío</title>
+<title>Secretaría Común | CGR Quindío</title>
 
-<meta name="theme-color" content="#12345b">
+<meta name="theme-color" content="#003b70">
 
 <style>
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial, Helvetica, sans-serif;
-    min-height:100vh;
-    background:
-        linear-gradient(135deg, #eef4fa 0%, #ffffff 50%, #e8f0f8 100%);
+    background:#f4f7fb;
     color:#17365d;
 }
 
-/* =========================
-   ENCABEZADO
-========================= */
 
-.header{
-    background:linear-gradient(135deg,#0d2d4f,#174f7d);
+/* =====================================================
+   BARRA SUPERIOR
+===================================================== */
+
+.topbar{
+    background:#002f5f;
     color:white;
-    padding:28px 20px;
-    box-shadow:0 4px 18px rgba(0,0,0,.18);
+    font-size:12px;
+    padding:8px 20px;
 }
 
-.header-content{
-    max-width:1150px;
+.topbar-content{
+    max-width:1250px;
     margin:auto;
     display:flex;
+    justify-content:space-between;
     align-items:center;
-    gap:20px;
 }
 
-.logo{
-    width:78px;
-    height:78px;
-    border:2px solid #d8b45a;
+.topbar span{
+    opacity:.9;
+}
+
+
+/* =====================================================
+   ENCABEZADO PRINCIPAL
+===================================================== */
+
+.header{
+    background:
+        linear-gradient(
+            135deg,
+            #003b70 0%,
+            #005b9f 55%,
+            #0875bd 100%
+        );
+
+    color:white;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,35,75,.20);
+}
+
+
+/* Decoraciones */
+
+.header:before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(255,255,255,.045);
+    right:-150px;
+    top:-250px;
+}
+
+.header:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(232,185,35,.08);
+    left:-180px;
+    bottom:-220px;
+}
+
+
+.header-content{
+    max-width:1250px;
+    margin:auto;
+    padding:28px 25px;
+
+    display:flex;
+    align-items:center;
+    gap:22px;
+
+    position:relative;
+    z-index:2;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-cgr{
+    width:92px;
+    height:92px;
+
+    background:white;
+
+    border:4px solid #e8b923;
+
     border-radius:18px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:32px;
-    background:rgba(255,255,255,.08);
+
+    color:#003b70;
+
+    font-weight:bold;
+    font-size:22px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.18);
+
     flex-shrink:0;
+
+    text-align:center;
+    line-height:1.05;
 }
+
+
+/* =====================================================
+   TEXTOS HEADER
+===================================================== */
 
 .header-text h1{
     font-size:25px;
-    letter-spacing:.5px;
+    letter-spacing:.3px;
+    margin-bottom:7px;
+}
+
+.header-text h2{
+    color:#f7d66a;
+    font-size:18px;
+    font-weight:normal;
     margin-bottom:6px;
 }
 
 .header-text p{
-    font-size:15px;
+    font-size:14px;
     opacity:.9;
 }
 
-.gold-line{
-    width:100%;
-    max-width:1150px;
-    height:3px;
-    background:#d8b45a;
-    margin:20px auto 0;
-    border-radius:5px;
-}
 
-/* =========================
-   CONTENIDO
-========================= */
+/* =====================================================
+   MENÚ
+===================================================== */
 
-.container{
-    width:92%;
-    max-width:1150px;
-    margin:35px auto 50px;
-}
-
-.welcome{
-    text-align:center;
-    margin-bottom:32px;
-}
-
-.welcome h2{
-    font-size:30px;
-    color:#12345b;
-    margin-bottom:8px;
-}
-
-.welcome p{
-    color:#60758a;
-    font-size:16px;
-}
-
-/* =========================
-   TARJETAS
-========================= */
-
-.apps-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.app-card{
+.nav{
     background:white;
-    border-radius:18px;
-    padding:25px 22px;
-    min-height:190px;
-    border:1px solid #dce5ee;
-    box-shadow:0 7px 20px rgba(20,55,85,.09);
-    transition:.25s ease;
+    border-bottom:1px solid #dce5ee;
+
+    position:sticky;
+    top:0;
+
+    z-index:50;
+
+    box-shadow:0 3px 12px rgba(20,50,80,.08);
+}
+
+.nav-content{
+    max-width:1250px;
+    margin:auto;
+
+    padding:0 25px;
+
     display:flex;
-    flex-direction:column;
+    align-items:center;
     justify-content:space-between;
 }
 
-.app-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 13px 28px rgba(20,55,85,.16);
-    border-color:#c7a64d;
+.nav-title{
+    color:#003b70;
+    font-weight:bold;
+    font-size:14px;
+    padding:15px 0;
 }
 
+.nav-links{
+    display:flex;
+    gap:5px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#52677d;
+
+    font-size:13px;
+    font-weight:bold;
+
+    padding:15px 12px;
+
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:#005b9f;
+    background:#f2f7fb;
+}
+
+
+/* =====================================================
+   CONTENEDOR
+===================================================== */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:40px 25px 50px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:white;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+    border:1px solid #dce5ee;
+
+    box-shadow:
+        0 8px 25px rgba(20,55,85,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:30px;
+}
+
+.hero-text h2{
+    color:#003b70;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.hero-text p{
+    color:#68798c;
+    font-size:15px;
+    line-height:1.6;
+    max-width:700px;
+}
+
+.hero-badge{
+    min-width:190px;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:#edf5fc;
+
+    border:1px solid #d7e6f2;
+
+    text-align:center;
+}
+
+.hero-badge strong{
+    display:block;
+
+    color:#003b70;
+
+    font-size:25px;
+
+    margin-bottom:5px;
+}
+
+.hero-badge span{
+    color:#718096;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   TÍTULO DE SECCIÓN
+===================================================== */
+
+.section-title{
+    margin-bottom:20px;
+}
+
+.section-title h2{
+    color:#003b70;
+    font-size:22px;
+}
+
+.section-title p{
+    color:#718096;
+    margin-top:5px;
+    font-size:14px;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.card{
+    position:relative;
+
+    background:white;
+
+    border-radius:19px;
+
+    padding:24px;
+
+    min-height:225px;
+
+    border:1px solid #dce5ee;
+
+    box-shadow:
+        0 6px 18px rgba(20,55,85,.07);
+
+    text-decoration:none;
+
+    color:#17365d;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(20,55,85,.15);
+
+    border-color:#e8b923;
+}
+
+
+/* Línea superior */
+
+.card:before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:5px;
+
+    background:#e8b923;
+}
+
+
+/* =====================================================
+   ICONO
+===================================================== */
+
 .icon{
-    width:58px;
-    height:58px;
-    border-radius:15px;
-    background:#edf4fa;
+    width:60px;
+    height:60px;
+
+    border-radius:16px;
+
+    background:#edf5fc;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:29px;
+
+    margin-bottom:17px;
+
+    transition:.25s;
+}
+
+.card:hover .icon{
+    transform:scale(1.08);
+}
+
+
+/* =====================================================
+   TEXTO CARD
+===================================================== */
+
+.card h3{
+    color:#003b70;
+
+    font-size:18px;
+
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#718096;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   PIE CARD
+===================================================== */
+
+.card-footer{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:18px;
+}
+
+.open{
+    color:#005b9f;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.arrow{
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    background:#edf5fc;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:29px;
-    margin-bottom:15px;
-}
 
-.app-card h3{
-    color:#163f68;
-    font-size:19px;
-    margin-bottom:7px;
-}
+    color:#005b9f;
 
-.app-card p{
-    color:#718294;
-    font-size:14px;
-    line-height:1.45;
-    margin-bottom:18px;
-}
-
-.btn{
-    width:100%;
-    border:none;
-    border-radius:10px;
-    padding:12px 15px;
-    background:#174f7d;
-    color:white;
-    font-size:14px;
-    font-weight:bold;
-    cursor:pointer;
     transition:.2s;
-    text-decoration:none;
-    text-align:center;
-    display:block;
 }
 
-.btn:hover{
-    background:#0d3658;
+.card:hover .arrow{
+    background:#005b9f;
+    color:white;
 }
 
-.btn.disabled{
-    background:#b9c4ce;
-    cursor:not-allowed;
+
+/* =====================================================
+   ESTADO DISPONIBLE
+===================================================== */
+
+.status{
+    position:absolute;
+
+    right:16px;
+    top:16px;
+
+    background:#e8f6ed;
+
+    color:#237a43;
+
+    border-radius:20px;
+
+    padding:5px 9px;
+
+    font-size:10px;
+
+    font-weight:bold;
 }
 
-/* =========================
+
+/* =====================================================
+   PRÓXIMAMENTE
+===================================================== */
+
+.card.disabled{
+    opacity:.68;
+
+    cursor:default;
+}
+
+.card.disabled:hover{
+    transform:none;
+
+    box-shadow:
+        0 6px 18px rgba(20,55,85,.07);
+
+    border-color:#dce5ee;
+}
+
+.card.disabled .status{
+    background:#eef1f4;
+    color:#6b7280;
+}
+
+
+/* =====================================================
    INFORMACIÓN
-========================= */
+===================================================== */
 
 .info{
-    margin-top:35px;
-    background:white;
-    border-radius:18px;
-    padding:24px;
-    border-left:5px solid #d8b45a;
-    box-shadow:0 6px 18px rgba(20,55,85,.08);
+    margin-top:38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #003b70,
+            #005b9f
+        );
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:27px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0,45,90,.15);
+}
+
+.info:after{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    right:-100px;
+    top:-110px;
 }
 
 .info h3{
-    margin-bottom:8px;
-    color:#163f68;
+    font-size:18px;
+
+    margin-bottom:7px;
+
+    position:relative;
+    z-index:2;
 }
 
 .info p{
-    color:#68798a;
+    font-size:13px;
+
     line-height:1.6;
-    font-size:14px;
+
+    opacity:.9;
+
+    max-width:800px;
+
+    position:relative;
+    z-index:2;
 }
 
-/* =========================
-   PIE
-========================= */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer{
+    margin-top:45px;
+
+    border-top:1px solid #dce5ee;
+
+    padding:25px;
+
     text-align:center;
-    padding:25px 15px;
-    color:#718294;
-    font-size:13px;
+
+    color:#718096;
+
+    font-size:12px;
+
+    line-height:1.7;
 }
 
 .footer strong{
-    color:#174f7d;
+    color:#003b70;
 }
 
-/* =========================
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
-@media(max-width:850px){
+@media(max-width:950px){
 
-    .apps-grid{
-        grid-template-columns:repeat(2,1fr);
+    .grid{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
 
-    .header{
-        padding:22px 15px;
+    .topbar-content{
+        justify-content:center;
+    }
+
+    .topbar span:last-child{
+        display:none;
     }
 
     .header-content{
-        align-items:flex-start;
+        padding:24px 18px;
     }
 
-    .logo{
-        width:60px;
-        height:60px;
-        font-size:25px;
-        border-radius:14px;
+    .logo-cgr{
+        width:70px;
+        height:70px;
+        font-size:17px;
     }
 
     .header-text h1{
-        font-size:19px;
+        font-size:18px;
+    }
+
+    .header-text h2{
+        font-size:14px;
     }
 
     .header-text p{
-        font-size:13px;
+        font-size:12px;
+    }
+
+    .nav-title{
+        display:none;
+    }
+
+    .nav-content{
+        justify-content:center;
+    }
+
+    .nav-links{
+        width:100%;
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:11px;
+        padding:13px 7px;
     }
 
     .container{
-        width:94%;
-        margin-top:25px;
+        padding:25px 15px 40px;
     }
 
-    .welcome h2{
-        font-size:25px;
+    .hero{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    .apps-grid{
+    .hero-badge{
+        width:100%;
+    }
+
+    .hero-text h2{
+        font-size:24px;
+    }
+
+    .grid{
         grid-template-columns:1fr;
-        gap:16px;
-    }
-
-    .app-card{
-        min-height:auto;
     }
 
 }
+
+@media(max-width:400px){
+
+    .header-content{
+        gap:12px;
+    }
+
+    .logo-cgr{
+        width:58px;
+        height:58px;
+        font-size:14px;
+    }
+
+    .header-text h1{
+        font-size:15px;
+    }
+
+    .header-text h2{
+        font-size:12px;
+    }
+
+    .nav-links a{
+        padding:12px 5px;
+        font-size:10px;
+    }
+
+}
+
 </style>
 
 </head>
 
 <body>
 
+<!-- =====================================================
+     BARRA SUPERIOR
+===================================================== -->
+
+<div class="topbar">
+
+```
+<div class="topbar-content">
+
+    <span>
+        Contraloría General de la República
+    </span>
+
+    <span>
+        Gerencia Departamental Colegiada del Quindío
+    </span>
+
+</div>
+```
+
+</div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header class="header">
 
 ```
 <div class="header-content">
 
-    <div class="logo">
-        ⚖️
+
+    <div class="logo-cgr">
+
+        CGR
+
     </div>
+
 
     <div class="header-text">
 
@@ -297,42 +806,132 @@ body{
             CONTRALORÍA GENERAL DE LA REPÚBLICA
         </h1>
 
-        <p>
+        <h2>
             Gerencia Departamental Colegiada del Quindío
-            · Secretaría Común
+        </h2>
+
+        <p>
+            SECRETARÍA COMÚN
         </p>
 
     </div>
 
-</div>
 
-<div class="gold-line"></div>
+</div>
 ```
 
 </header>
 
-<main class="container">
+<!-- =====================================================
+     MENÚ
+===================================================== -->
+
+<nav class="nav">
 
 ```
-<section class="welcome">
+<div class="nav-content">
+
+    <div class="nav-title">
+        Secretaría Común
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#inicio">
+            Inicio
+        </a>
+
+        <a href="#herramientas">
+            Herramientas
+        </a>
+
+        <a href="#informacion">
+            Información
+        </a>
+
+    </div>
+
+</div>
+```
+
+</nav>
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
+<main class="container" id="inicio">
+
+```
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h2>
+            Herramientas de Secretaría Común
+        </h2>
+
+        <p>
+            Acceso centralizado a las aplicaciones desarrolladas
+            para apoyar las actividades de gestión documental,
+            citaciones, Estados y demás procesos de la Secretaría
+            Común de la Gerencia Departamental Colegiada del Quindío.
+        </p>
+
+    </div>
+
+
+    <div class="hero-badge">
+
+        <strong>
+            5
+        </strong>
+
+        <span>
+            herramientas disponibles
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- TÍTULO -->
+
+<section class="section-title" id="herramientas">
 
     <h2>
-        Secretaría Común
+        Herramientas disponibles
     </h2>
 
     <p>
-        Plataforma de acceso a las herramientas de la Secretaría Común
+        Seleccione la herramienta que desea utilizar.
     </p>
 
 </section>
 
 
-<section class="apps-grid">
+<!-- =================================================
+     GRID DE APLICACIONES
+================================================= -->
+
+<section class="grid">
 
 
-    <!-- NÚMERO PARA AUTO -->
+    <!-- 1 NÚMERO AUTO -->
 
-    <div class="app-card">
+    <a
+        class="card"
+        href="https://script.google.com/macros/s/AKfycbw_P28i8j1QnPyVEYWIEBNxgpE8yT8Ijeacwr-MlQKJkbmWgM1x9VJrOvx9cKrav33CwA/exec"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <span class="status">
+            DISPONIBLE
+        </span>
 
         <div>
 
@@ -345,24 +944,39 @@ body{
             </h3>
 
             <p>
-                Herramienta para consulta y gestión del número correspondiente a los Autos.
+                Generación y consulta del número correspondiente
+                para los Autos.
             </p>
 
         </div>
 
-        <a
-            href="#"
-            class="btn disabled"
-        >
-            Próximamente
-        </a>
+        <div class="card-footer">
 
-    </div>
+            <span class="open">
+                Abrir herramienta
+            </span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </div>
+
+    </a>
 
 
-    <!-- DEVOLUCIONES -->
+    <!-- 2 DEVOLUCIONES -->
 
-    <div class="app-card">
+    <a
+        class="card"
+        href="https://script.google.com/macros/s/AKfycbw9xKXWD_BoGKsle5CtXcO-ITHlYzrOscGu9XflNJWiTxLm7UmbOH81B0Lmbz44xn04GA/exec"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <span class="status">
+            DISPONIBLE
+        </span>
 
         <div>
 
@@ -375,29 +989,39 @@ body{
             </h3>
 
             <p>
-                Elaboración de documentos de devolución de manera rápida y organizada.
+                Elaboración de oficios de devolución de Autos
+                y documentos.
             </p>
 
         </div>
 
-        <a
-            href="#"
-            class="btn disabled"
-        >
-            Próximamente
-        </a>
+        <div class="card-footer">
 
-    </div>
+            <span class="open">
+                Abrir herramienta
+            </span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </div>
+
+    </a>
 
 
-    <!-- CONSTANCIAS -->
+    <!-- 3 CONSTANCIAS -->
 
-    <div class="app-card">
+    <div class="card disabled">
+
+        <span class="status">
+            PRÓXIMAMENTE
+        </span>
 
         <div>
 
             <div class="icon">
-                📋
+                📝
             </div>
 
             <h3>
@@ -405,54 +1029,39 @@ body{
             </h3>
 
             <p>
-                Generación de constancias secretariales.
+                Generador de constancias secretariales para
+                los diferentes procesos.
             </p>
 
         </div>
 
-        <a
-            href="#"
-            class="btn disabled"
-        >
-            Próximamente
-        </a>
+        <div class="card-footer">
 
-    </div>
+            <span class="open">
+                En desarrollo
+            </span>
 
-
-    <!-- CITACIONES -->
-
-    <div class="app-card">
-
-        <div>
-
-            <div class="icon">
-                📬
-            </div>
-
-            <h3>
-                Citaciones
-            </h3>
-
-            <p>
-                Herramienta para la elaboración y gestión de citaciones.
-            </p>
+            <span class="arrow">
+                …
+            </span>
 
         </div>
 
-        <a
-            href="#"
-            class="btn disabled"
-        >
-            Próximamente
-        </a>
-
     </div>
 
 
-    <!-- NOTIFICACIONES -->
+    <!-- 4 CITACIONES -->
 
-    <div class="app-card">
+    <a
+        class="card"
+        href="https://script.google.com/macros/s/AKfycbxlhfkJTR0nXXyZpvJCR3wUxe6u8ePtfrKqPhmfk92VMuzNQ16iJo6j06MMQJp8vjXN/exec"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <span class="status">
+            DISPONIBLE
+        </span>
 
         <div>
 
@@ -461,33 +1070,93 @@ body{
             </div>
 
             <h3>
-                Notificaciones
+                Generador de Citaciones
             </h3>
 
             <p>
-                Acceso a las herramientas relacionadas con las notificaciones.
+                Elaboración y generación de citaciones
+                para los diferentes procesos.
             </p>
 
         </div>
 
-        <a
-            href="#"
-            class="btn disabled"
-        >
-            Próximamente
-        </a>
+        <div class="card-footer">
 
-    </div>
+            <span class="open">
+                Abrir herramienta
+            </span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </div>
+
+    </a>
 
 
-    <!-- ESTADOS -->
+    <!-- 5 SEGUIMIENTO CITACIONES -->
 
-    <div class="app-card">
+    <a
+        class="card"
+        href="https://script.google.com/macros/s/AKfycbzBBcUtsq9M6G03J-9ElZtbqPmGFs5QrMaEDkbCYRtxjjZQ_JGGYUp_r9o1U94sQmQ/exec"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <span class="status">
+            DISPONIBLE
+        </span>
 
         <div>
 
             <div class="icon">
-                📑
+                📬
+            </div>
+
+            <h3>
+                Seguimiento a Citaciones
+            </h3>
+
+            <p>
+                Consulta y seguimiento de las citaciones
+                realizadas para los diferentes procesos.
+            </p>
+
+        </div>
+
+        <div class="card-footer">
+
+            <span class="open">
+                Abrir herramienta
+            </span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- 6 ESTADOS -->
+
+    <a
+        class="card"
+        href="https://script.google.com/macros/s/AKfycbwrrQ8bUHDJuVWQsRCgN4tTG7RrAY0Vx4yGN5Md7MrW02o6yelzqbRhsRQsbY2A5Mda/exec"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        <span class="status">
+            DISPONIBLE
+        </span>
+
+        <div>
+
+            <div class="icon">
+                📋
             </div>
 
             <h3>
@@ -495,34 +1164,44 @@ body{
             </h3>
 
             <p>
-                Consulta y gestión de Estados de la Secretaría Común.
+                Consulta y gestión de los Estados
+                de los procesos.
             </p>
 
         </div>
 
-        <a
-            href="https://script.google.com/macros/s/AKfycbwrrQ8bUHDJuVWQsRCgN4tTG7RrAY0Vx4yGN5Md7MrW02o6yelzqbRhsRQsbY2A5Mda/exec"
-            class="btn"
-            target="_blank"
-        >
-            Abrir aplicación
-        </a>
+        <div class="card-footer">
 
-    </div>
+            <span class="open">
+                Abrir herramienta
+            </span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </div>
+
+    </a>
+
 
 </section>
 
 
-<section class="info">
+<!-- =================================================
+     INFORMACIÓN
+================================================= -->
+
+<section class="info" id="informacion">
 
     <h3>
         Secretaría Común · Quindío
     </h3>
 
     <p>
-        Este portal centraliza las herramientas digitales utilizadas
-        para apoyar las actividades de la Secretaría Común de la
-        Gerencia Departamental Colegiada del Quindío.
+        Portal de acceso a las herramientas digitales de la
+        Secretaría Común de la Gerencia Departamental Colegiada
+        del Quindío.
     </p>
 
 </section>
@@ -530,16 +1209,28 @@ body{
 
 </main>
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer class="footer">
 
 ```
-Secretaría Común · CGR Quindío
+<strong>
+    SECRETARÍA COMÚN
+</strong>
+
+<br>
+
+Gerencia Departamental Colegiada del Quindío
+
+<br>
+
+Contraloría General de la República
 
 <br><br>
 
-<strong>
-    Plataforma institucional
-</strong>
+Plataforma de herramientas digitales
 ```
 
 </footer>
